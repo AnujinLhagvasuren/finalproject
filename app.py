@@ -1,22 +1,16 @@
-# @Email:  contact@pythonandvba.com
-# @Website:  https://pythonandvba.com
-# @YouTube:  https://youtube.com/c/CodingIsFun
-# @Project:  Sales Dashboard w/ Streamlit
 
-
-
-import pandas as pd  # pip install pandas openpyxl
-import plotly.express as px  # pip install plotly-express
-import streamlit as st  # pip install streamlit
+import pandas as pd  
+import plotly.express as px  
+import streamlit as st 
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
-st.set_page_config(page_title="Sales Dashboard", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="Animal Disease Dashboard", page_icon=":bar_chart:", layout="wide")
 
 # ---- READ EXCEL ----
 @st.cache_data
 def get_data_from_excel():
     df = pd.read_excel(
-        io="supermarkt_sales.xlsx",
+        io="mal_galzuu.csv",
         engine="openpyxl",
         sheet_name="Sales",
         skiprows=3,
