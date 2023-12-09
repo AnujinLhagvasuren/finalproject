@@ -12,7 +12,7 @@ def get_data_from_excel():
     df = pd.read_excel(
         io="mal_galzuu.csv",
         engine="openpyxl",
-        sheet_name="Sales",
+        sheet_name="Disease",
         skiprows=3,
         usecols="B:R",
         nrows=1000,
@@ -26,25 +26,25 @@ df = get_data_from_excel()
 # ---- SIDEBAR ----
 st.sidebar.header("Please Filter Here:")
 city = st.sidebar.multiselect(
-    "Select the City:",
-    options=df["City"].unique(),
-    default=df["City"].unique()
+    "Select the Province:",
+    options=df["Province"].unique(),
+    default=df["Province"].unique()
 )
 
 customer_type = st.sidebar.multiselect(
-    "Select the Customer Type:",
-    options=df["Customer_type"].unique(),
-    default=df["Customer_type"].unique(),
+    "Select the Animal Type:",
+    options=df["Animal_type"].unique(),
+    default=df["Animal_type"].unique(),
 )
 
 gender = st.sidebar.multiselect(
-    "Select the Gender:",
-    options=df["Gender"].unique(),
-    default=df["Gender"].unique()
+    "Select the Age:",
+    options=df["Age"].unique(),
+    default=df["Age"].unique()
 )
 
 df_selection = df.query(
-    "City == @city & Customer_type ==@customer_type & Gender == @gender"
+    "Province == @Аймаг & Animal_type ==@Амьтны төрөл & Age == @Сар"
 )
 
 # Check if the dataframe is empty:
@@ -53,7 +53,7 @@ if df_selection.empty:
     st.stop() # This will halt the app from further execution.
 
 # ---- MAINPAGE ----
-st.title(":bar_chart: Sales Dashboard")
+st.title(":bar_chart:  Animal Disease Dashboard")
 st.markdown("##")
 
 # TOP KPI's
