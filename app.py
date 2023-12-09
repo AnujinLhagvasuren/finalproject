@@ -3,6 +3,9 @@ import plotly.express as px
 import streamlit as st
 
 
+df = pd.read_csv("mal_galzuu.csv")
+st.dataframe(df)
+
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Animal Disease Dashboard", page_icon=":bar_chart:", layout="wide")
 
